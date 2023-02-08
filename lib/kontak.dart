@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kontak/utama.dart';
+import 'package:kontak/chat.dart';
 
 String satu = 'https://i0.wp.com/bloganchoi.com/wp-content/uploads/2022/12/gemini-norawit-4.jpg';
 String dua = 'https://assets.promediateknologi.com/crop/0x0:0x0/0x0/webp/photo/2023/01/10/2039660119.jpg';
@@ -11,14 +12,14 @@ String empat = 'https://cdn.idntimes.com/content-images/community/2021/11/651141
 //   runApp( MyApp());
 // }
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-       debugShowCheckedModeBanner: false,
-    );
-  }
-}
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//        debugShowCheckedModeBanner: false,
+//     );
+//   }
+// }
 
 class KontakScreen extends StatelessWidget {
   const KontakScreen({Key? key}) : super(key: key);
@@ -28,6 +29,7 @@ class KontakScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
   appBar: AppBar(
+    
     // leading: Icon(Icons.arrow_back_ios_new),
     // title: Text('Pilih kontak'),
     // actions: <Widget>[
@@ -43,6 +45,7 @@ class KontakScreen extends StatelessWidget {
     //     ),
     //   IconButton(icon: new Icon(Icons.format_list_bulleted_rounded, color: Colors.white), onPressed: () {  },),
     // ],
+    
     leading: IconButton(
           onPressed: () {
             Navigator.push(
@@ -61,7 +64,7 @@ class KontakScreen extends StatelessWidget {
         title: Text('Pilih kontak'),
         actions: <Widget>[
       IconButton(icon: new Icon(Icons.search, color: Colors.white), onPressed: () {  }, ),
-      IconButton(icon: new Icon(Icons.format_list_bulleted_rounded, color: Colors.white), onPressed: () {  },),
+      IconButton(icon: new Icon(Icons.more_vert, color: Colors.white), onPressed: () {  },),
     ],
   ),
   body: ListView(
@@ -82,7 +85,7 @@ class KontakScreen extends StatelessWidget {
               ),
             ),
             title: Text("Kontak Baru", style: TextStyle(fontSize: 20),),
-            trailing: Icon(Icons.qr_code_2),
+            trailing: Icon(Icons.qr_code, color: Colors.blueAccent),
 
           ),
           ListTile(
@@ -171,17 +174,17 @@ class KontakScreen extends StatelessWidget {
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => KontakScreen(),
-            ),
-          );
-        } ,
-        child: const Icon(Icons.chat_outlined),
-      ), 
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {
+      //     Navigator.push(
+      //       context,
+      //       MaterialPageRoute(
+      //         builder: (context) => KontakScreen(),
+      //       ),
+      //     );
+      //   } ,
+      //   child: const Icon(Icons.chat_outlined),
+      // ), 
     );
   }
 }

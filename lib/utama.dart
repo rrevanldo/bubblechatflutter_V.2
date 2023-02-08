@@ -1,27 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:kontak/kontak.dart';
+import 'package:kontak/chat.dart';
 
 // void main() {
 //   runApp(MyApp());
 // }
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-       debugShowCheckedModeBanner: false,
-    );
-  }
-}
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//        debugShowCheckedModeBanner: false,
+//     );
+//   }
+// }
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    // return MaterialApp(
-    //    debugShowCheckedModeBanner: false,
-    // );
     return Scaffold(
       //  backgroundColor: Colors.blueAccent,
       body: Container(
@@ -62,14 +60,13 @@ class HomeScreen extends StatelessWidget {
                     child: Text(
                       "Deandra Fushiguro",
                       style: TextStyle(
-                        fontSize: 30,
-                        // fontWeight: FontWeight.w300,
-                        color: Colors.white,
-                        // color: Color.fromARGB(255, 19, 123, 192),
-                        letterSpacing: .5,
-                        fontWeight: FontWeight.bold
-                        // style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
+                          fontSize: 30,
+                          // fontWeight: FontWeight.w300,
+                          color: Colors.white,
+                          // color: Color.fromARGB(255, 19, 123, 192),
+                          letterSpacing: .5,
+                          // style: TextStyle(fontWeight: FontWeight.bold),
+                          fontWeight: FontWeight.bold),
                     ),
                   ),
                   Center(
@@ -109,13 +106,13 @@ class HomeScreen extends StatelessWidget {
                       children: <Widget>[
                         Container(
                           alignment: Alignment.centerLeft,
-                          margin: EdgeInsets.only(bottom: 20, left: 5),
+                          margin: EdgeInsets.only(bottom: 30, left: 5, top: 20),
                           child: Text(
-                            "Friend",
+                            "Friends",
                             style: TextStyle(
                               fontSize: 20,
                               color: Color.fromARGB(255, 0, 0, 0),
-                              letterSpacing: .5,
+                              // letterSpacing: .5,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -125,15 +122,18 @@ class HomeScreen extends StatelessWidget {
                             backgroundImage: AssetImage("images/nm.jpg"),
                           ),
                           title: Text("Nanami Kento"),
-                          subtitle: Text('Halo Deandra!'),
+                          subtitle: Text('Hallo Deandra!'),
                           trailing: Text('04.33'),
                         ),
                         ListTile(
                           leading: CircleAvatar(
-                            backgroundImage: AssetImage("images/tj.jpg"),
+                            backgroundImage: AssetImage("images/gj.jpg"),
                           ),
-                          title: Text("Toji Fushiguro", style: TextStyle(fontWeight: FontWeight.bold),),
-                          subtitle: Text('Halo Deandra!'),
+                          title: Text(
+                            "Gojo Satoru",
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          subtitle: Text('Haii Deandra!'),
                           trailing: Text(
                             'Now',
                             style: TextStyle(fontWeight: FontWeight.bold),
@@ -150,28 +150,92 @@ class HomeScreen extends StatelessWidget {
                         ),
                         ListTile(
                           leading: CircleAvatar(
-                            backgroundImage: AssetImage("images/nm.jpg"),
+                            backgroundImage: AssetImage("images/kl.jpg"),
                           ),
                           title: Text("Keluarga Besar"),
-                          subtitle: Text('Ahahahahaha!'),
+                          subtitle: Text('Nobara: Ahahahahaha!'),
                           trailing: Text('03.34'),
+                           onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) {
+                                  return ChatSample();
+                                }
+                              ),
+                            );
+                          }
+                        ),
+                        ListTile(
+                            leading: CircleAvatar(
+                              backgroundImage: AssetImage("images/jk.jpg"),
+                            ),
+                            title: Text(
+                              "Grup Sekolah",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            subtitle: Text('Sukuna: Info PTM Hari ini!'),
+                            trailing: Text(
+                              '08.34',
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) {
+                                  return ChatSample();
+                                }
+                              ),
+                            );
+                          }
                         ),
                         ListTile(
                           leading: CircleAvatar(
-                            backgroundImage: AssetImage("images/tj.jpg"),
+                            backgroundImage: AssetImage("images/kl.jpg"),
                           ),
-                          title: Text("Grup Sekolah", style: TextStyle(fontWeight: FontWeight.bold),),
-                          subtitle: Text('Info PTM Hari ini!'),
-                          trailing: Text(
-                            '08.34',
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
+                          title: Text("Jujutsu Kaisen"),
+                          subtitle: Text('Toge: Salmon!'),
+                          trailing: Text('12.34'),
+                           onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) {
+                                  return ChatSample();
+                                }
+                              ),
+                            );
+                          }
+                        ),
+                        ListTile(
+                            leading: CircleAvatar(
+                              backgroundImage: AssetImage("images/jk.jpg"),
+                            ),
+                            title: Text(
+                              "JJK XI-2",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            subtitle: Text('Megumi: Info tugas dongg!'),
+                            trailing: Text(
+                              '00.00',
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) {
+                                  return ChatSample();
+                                }
+                              ),
+                            );
+                          }
                         ),
                       ],
                     ),
                   ),
-                ]),
-              ])),
+                ]
+              ),
+            ]
+          )
+        ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(
